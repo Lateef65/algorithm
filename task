@@ -1,0 +1,26 @@
+def count_sentence(sentence):
+    sentence_length = 0
+    num_words = 0
+    num_vowels = 0
+    
+    vowels = "aeiouAEIOU"
+    
+    for char in sentence:
+        sentence_length += 1
+        
+        if char == ' ':
+            num_words += 1
+        elif char in vowels:
+            num_vowels += 1
+    
+    # Adding 1 to num_words to account for the last word before the period
+    num_words += 1
+    
+    return sentence_length, num_words, num_vowels
+
+# Example usage:
+sentence = "The quick brown fox jumps over the lazy dog."
+length, words, vowels = count_sentence(sentence)
+print("Length of the sentence:", length)
+print("Number of words in the sentence:", words)
+print("Number of vowels in the sentence:", vowels)
